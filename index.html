@@ -29,6 +29,11 @@
             max-width: 800px;
         }
     </style>
+    <!-- n8n Chat styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/index.css"
+    />
 </head>
 <body>
     <div class="container">
@@ -55,11 +60,11 @@
         <!-- Optional fallback link -->
         <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat</p>
 
-        <!-- Embedded n8n Chat via CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest"></script>
+        <!-- n8n Chat UMD bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/index.umd.min.js"></script>
         <script>
           window.n8nChatConfig = {
-            webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat"
+            webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat",
           };
           window.addEventListener("DOMContentLoaded", function () {
             n8nChat.mount("#n8n-chat");
