@@ -60,18 +60,11 @@
         <!-- Optional fallback link -->
         <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat. New</p>
 
-        <!-- n8n Chat ESM module -->
-        <script type="module">
-          import { mount } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/index.js';
-          // set your webhook URL
-          window.n8nChatConfig = {
-            webhookUrl: 'https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat',
-          };
-          document.addEventListener('DOMContentLoaded', () => {
-            mount('#n8n-chat');
-          });
-        </script>
-        <div id="n8n-chat"></div>
+        <!-- n8n Chat iframe version -->
+        <iframe src="https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat"
+                style="width:100%; height:600px; border:none;"
+                title="Boeren KnAIcht Chat">
+        </iframe>
     </div>
 </body>
 </html>
