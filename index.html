@@ -60,14 +60,15 @@
         <!-- Optional fallback link -->
         <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat. New</p>
 
-        <!-- n8n Chat UMD bundle -->
-        <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/index.umd.js"></script>
-        <script>
+        <!-- n8n Chat ESM module -->
+        <script type="module">
+          import { mount } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/index.js';
+          // set your webhook URL
           window.n8nChatConfig = {
-            webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat",
+            webhookUrl: 'https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat',
           };
-          window.addEventListener("DOMContentLoaded", function () {
-            n8nChat.mount("#n8n-chat");
+          document.addEventListener('DOMContentLoaded', () => {
+            mount('#n8n-chat');
           });
         </script>
         <div id="n8n-chat"></div>
