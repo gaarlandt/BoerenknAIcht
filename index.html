@@ -48,7 +48,16 @@
         </script>
 
         <!-- Optional fallback link -->
-        <p>En hier nog meer text. misschien een chat window.</p>
+        <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat</p>
+
+        <!-- Embedded n8n Chat -->
+        <div id="n8n-chat"></div>
+        <script>
+          window.n8nChatConfig = {
+            webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat"
+          };
+        </script>
+        <script src="https://unpkg.com/@n8n/chat@latest/dist/chat.js"></script>
     </div>
 </body>
 </html>
