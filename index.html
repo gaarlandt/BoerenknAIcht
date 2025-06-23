@@ -50,14 +50,17 @@
         <!-- Optional fallback link -->
         <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat</p>
 
-        <!-- Embedded n8n Chat -->
-        <div id="n8n-chat"></div>
+        <!-- Embedded n8n Chat via CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest"></script>
         <script>
           window.n8nChatConfig = {
             webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat"
           };
+          window.addEventListener("DOMContentLoaded", function () {
+            n8nChat.mount("#n8n-chat");
+          });
         </script>
-        <script src="https://unpkg.com/@n8n/chat@latest/dist/chat.js"></script>
+        <div id="n8n-chat"></div>
     </div>
 </body>
 </html>
