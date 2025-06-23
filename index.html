@@ -53,19 +53,19 @@
         </script>
 
         <!-- Optional fallback link -->
-        <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat. update</p>
+        <p>Hier de test chat met dezelfde flow, er zit nog geen context tussen form submit en chat</p>
 
         <!-- Embedded n8n Chat via CDN -->
-        <div id="n8n-chat"></div>
+        <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest"></script>
         <script>
-          window.addEventListener('n8n-chat.ready', () => {
-            window.n8nChat.render({
-              webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat",
-              container: document.getElementById('n8n-chat'),
-            });
+          window.n8nChatConfig = {
+            webhookUrl: "https://n8n.techzaken.nl/webhook/aefddba2-025b-4ee4-b4ac-e7525b2e1fdc/chat"
+          };
+          window.addEventListener("DOMContentLoaded", function () {
+            n8nChat.mount("#n8n-chat");
           });
         </script>
-        <script defer src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/asset/index.js"></script>
+        <div id="n8n-chat"></div>
     </div>
 </body>
 </html>
